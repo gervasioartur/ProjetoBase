@@ -50,9 +50,13 @@ namespace ProjetoBase.Formularios
             RetornoValidacaoDados retorno = ValidacaoDadosObrigatorios.validarPanelObrigatorio(panel_cargo);
             if (retorno.Valido)
             {
-                cargo = new Cargo();
-                cargo.Nome = txt_nome.Texto;
 
+                if (cargo == null)
+                {
+                    cargo = new Cargo();
+                }
+                cargo.Nome = txt_nome.Texto;
+               
                 EnumResultadoQuery retornoQuery = Repositorios.Cargo.Salvar(cargo);
                 DispararEventoSalvo(cargo);
                 mostrarMensagemResultado(retornoQuery);

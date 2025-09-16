@@ -18,11 +18,28 @@ namespace ProjetoBase
 
         }
 
+
+        private void text_login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txt_senha_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btn_logar_Click(object sender, EventArgs e)
         {
             SessionFactory.UnflushedSession();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
     }
 }

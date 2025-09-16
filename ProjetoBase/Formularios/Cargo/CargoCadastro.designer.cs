@@ -73,31 +73,46 @@ namespace ProjetoBase.Formularios
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Caixa = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_codigo.CorLabel = System.Drawing.Color.Black;
             this.txt_codigo.Location = new System.Drawing.Point(3, 3);
+            this.txt_codigo.MultiLinha = false;
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.NomeDisplay = "Codigo";
             this.txt_codigo.Obrigatorio = false;
+            this.txt_codigo.PedirSenhaAlterarSomenteLeitura = true;
+            this.txt_codigo.PermitirAlterarSomenteLeitura = false;
+            this.txt_codigo.PermitirValorNegativo = false;
             this.txt_codigo.Senha = false;
             this.txt_codigo.Size = new System.Drawing.Size(129, 35);
             this.txt_codigo.SomenteLeitura = true;
             this.txt_codigo.TabIndex = 0;
+            this.txt_codigo.TamanhoMaximo = 255;
             this.txt_codigo.TamanhoTextBox = null;
             this.txt_codigo.Texto = null;
             this.txt_codigo.TipoTextBox = ProjetoBase.Enumeradores.TipoTextBox.Texto;
             // 
             // txt_nome
             // 
+            this.txt_nome.Caixa = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_nome.CorLabel = System.Drawing.Color.Black;
             this.txt_nome.Location = new System.Drawing.Point(3, 44);
+            this.txt_nome.MultiLinha = false;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.NomeDisplay = "Nome";
             this.txt_nome.Obrigatorio = true;
+            this.txt_nome.PedirSenhaAlterarSomenteLeitura = true;
+            this.txt_nome.PermitirAlterarSomenteLeitura = false;
+            this.txt_nome.PermitirValorNegativo = false;
             this.txt_nome.Senha = false;
             this.txt_nome.Size = new System.Drawing.Size(289, 35);
             this.txt_nome.SomenteLeitura = false;
             this.txt_nome.TabIndex = 3;
+            this.txt_nome.TamanhoMaximo = 255;
             this.txt_nome.TamanhoTextBox = null;
             this.txt_nome.Texto = null;
             this.txt_nome.TipoTextBox = ProjetoBase.Enumeradores.TipoTextBox.Texto;
+            this.txt_nome.Paint += new System.Windows.Forms.PaintEventHandler(this.txt_nome_Paint);
             // 
             // btn_cancelar
             // 

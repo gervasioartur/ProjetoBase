@@ -238,8 +238,9 @@ namespace ProjetoBase.CustomControls
 
 
 
-        public void mostrarMensagemResultadoSemFechar(EnumResultadoQuery resultado)
+        public void mostrarMensagemResultadoSemFechar(EnumResultadoQuery resultado, String mensagem = null)
         {
+            String msg = null;
             switch (resultado)
             {
                 case EnumResultadoQuery.SUCESSO:
@@ -253,6 +254,14 @@ namespace ProjetoBase.CustomControls
                     break;
                 case EnumResultadoQuery.PK_DUPLICADO:
                     MessageBox.Show("Não foi possivel salvar este registro! O Id utilizado já existe.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case EnumResultadoQuery.OBJETO_INEXISTENTE:
+                    msg = mensagem ?? "Não foi possivel encontrat o objecto referenciado.";
+                    MessageBox.Show(msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case EnumResultadoQuery.OBJETO_DUPLICADO:
+                    msg = mensagem ?? "Não foi possivel salvar este registro! Já existe um registro com os mesmos dados.";
+                    MessageBox.Show(msg, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case EnumResultadoQuery.ERRO_GENERICO:
                     MessageBox.Show("Não foi possivel realizar esta ação! Encerre o sistema e inicie novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);

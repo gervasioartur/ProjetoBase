@@ -348,6 +348,8 @@
     <Compile Include="DataBase\Mapeamento\Funcionario\SessaoLoginMap.cs" />
     <Compile Include="DataBase\Mapeamento\Funcionario\UsuarioMap.cs" />
     <Compile Include="DataBase\Migrations\AlterarTamanhoNomeCargo.cs" />
+    <Compile Include="DataBase\Migrations\SeedPerfilDeAcessoSuperUsuario .cs" />
+    <Compile Include="DataBase\Migrations\SeedUsuarioAdmin .cs" />
     <Compile Include="Enumeradores\EnumNivelDeAcesso.cs" />
     <Compile Include="Enumeradores\EnumResultadoQuery.cs" />
     <Compile Include="Enumeradores\EnumTamanhoTextBox.cs" />
@@ -363,6 +365,7 @@
     <Compile Include="Ferramentas\ExcecaoManager.cs" />
     <Compile Include="Ferramentas\InstanciaServidor.cs" />
     <Compile Include="Ferramentas\MigrationRunner.cs" />
+    <Compile Include="Ferramentas\RetornoServico.cs" />
     <Compile Include="Ferramentas\Serializacao.cs" />
     <Compile Include="Ferramentas\SessaoSistema.cs" />
     <Compile Include="Ferramentas\VersaoTecnoCart.cs" />
@@ -417,6 +420,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataBase\Repository\CargoRepo.cs" />
+    <Compile Include="Servicos\CargoService.cs" />
     <EmbeddedResource Include="CustomControl\Form\FormCC.resx">
       <DependentUpon>FormCC.cs</DependentUpon>
     </EmbeddedResource>
@@ -520,6 +525,7 @@
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

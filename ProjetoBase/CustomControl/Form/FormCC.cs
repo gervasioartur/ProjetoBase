@@ -273,6 +273,20 @@ namespace ProjetoBase.CustomControls
         }
 
 
+        public void mostrarMensagemResultadoSemFechar(EnumValidacaoTelaLogin resultado)
+        {
+            String msg = null;
+            switch (resultado)
+            {
+                case EnumValidacaoTelaLogin.Login_Obrigatorio:
+                    MessageBox.Show("O campo 'Login' é obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+                case EnumValidacaoTelaLogin.Senha_Obrigatorio:
+                    MessageBox.Show("O campo 'Senha' é obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
+        }
+
         public void cancelarEdicao(Object objetoParaEvict)
         {
             try

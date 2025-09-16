@@ -1,5 +1,7 @@
 ﻿using ProjetoBase.DataBase;
+using ProjetoBase.DataBase.Repository;
 using ProjetoBase.Formularios;
+using ProjetoBase.Servicos;
 using System.Windows.Forms;
 
 namespace ProjetoBase
@@ -8,7 +10,11 @@ namespace ProjetoBase
     {
         public AppContext()
         {
-            var login = new Login();
+
+            UsuarioRepo usuarioRepo = new UsuarioRepo();
+            AutenticacaoServico autenticacaoServico = new AutenticacaoServico(usuarioRepo);
+
+            var login = new Login(autenticacaoServico);
             login.FormClosed += (s, e) =>
             {
                 if (login.DialogResult == DialogResult.OK)

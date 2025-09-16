@@ -14,13 +14,13 @@ namespace ProjetoBase.DataBase.Migrations
         {
             Insert.IntoTable("PERFIL_DE_ACESSO").Row(new
             {
-                Nome = "Superusuario",
+                Nome = "SUPERUSUARIO",
             });
         }
 
         public override void Down()
         {
-            Delete.FromTable("PERFIL_DE_ACESSO").Row(new { Nome = "Superusuario" });
+            Delete.FromTable("PERFIL_DE_ACESSO").Row(new { Nome = "SUPERUSUARIO" });
         }
     }
 }

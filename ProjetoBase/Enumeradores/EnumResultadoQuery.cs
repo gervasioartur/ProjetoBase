@@ -14,6 +14,8 @@ namespace ProjetoBase.Enumeradores
         ERRO_GENERICO = 3,
         PK_DUPLICADO = 4,
         OBJETO_REFERENCIADO = 5,
-        TENTANTIVA_DE_DELETE = 6
+        TENTANTIVA_DE_DELETE = 6,
+        OBJETO_DUPLICADO = 7,
+        OBJETO_INEXISTENTE = 8
     }
 }

@@ -9,7 +9,7 @@ using System;
 
 namespace ProjetoBase.DataBase.Migrations
 {
-    [Migration(202509151600)] 
+    [Migration(202509151600)]
     public class AlterarTamanhoNomeCargo : Migration
     {
         public override void Up()

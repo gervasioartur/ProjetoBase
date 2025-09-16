@@ -18,22 +18,26 @@ using ProjetoBase.DataBase;
 using ProjetoBase.DataBase.Dominio;
 using ProjetoBase.DataBase.Dominio.Funcionario;
 using ProjetoBase.Exceptions;
+using ProjetoBase.Services;
+using ProjetoBase.Repository;
 
 namespace ProjetoBase.Formularios
 {
     public partial class CargoMenu : MenuCC, InterfaceMenu
     {
-
+        private readonly CargoService _cargoService;
         public CargoMenu()
         {
             InitializeComponent();
-
             //Eventos
             btn_cadastrar.Botao.Click += botao_cadastrar_Click;
             btn_alterar.Botao.Click += botao_alterar_Click;
             //Eventos
-
             backgroundWorkerUpdate.setMenu(this);
+            //Repositorios
+            CargoRepo cargoRepo = new CargoRepo();
+            //Serviços
+            _cargoService = new CargoService(cargoRepo);
         }
 
 
@@ -41,7 +45,7 @@ namespace ProjetoBase.Formularios
         {
             if (ValidacaoNivelDeAcesso.acessoPermitido(btn_cadastrar.NivelDeAcesso))
             {
-                CargoCadastro CargoCadastro = new CargoCadastro(null);
+                CargoCadastro CargoCadastro = new CargoCadastro(null, _cargoService);
                 CargoCadastro.ShowDialog();
                 update();
             }
@@ -56,7 +60,7 @@ namespace ProjetoBase.Formularios
                     Cargo cargo = (Cargo)dgv_cargo.SelectedRows[0].Cells[0].Value;
                     if (cargo != null)
                     {
-                        CargoCadastro CargoCadastro = new CargoCadastro(cargo);
+                        CargoCadastro CargoCadastro = new CargoCadastro(cargo, _cargoService);
                         CargoCadastro.ShowDialog();
                         update();
                     }

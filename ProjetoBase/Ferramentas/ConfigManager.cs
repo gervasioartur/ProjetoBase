@@ -53,7 +53,7 @@ namespace ProjetoBase.Ferramentas
             Config.Config config = getConfig();
 
             InstanciaServidor instancia = config?.Instancias?.Where(x => x.UltimaInstanciaUsada).SingleOrDefault();
-            stringConexao = "Server=" + instancia?.Servidor + ";Database=PROJETO_BASE;User=" + (instancia?.Usuario) + ";Password=" + instancia?.Senha + ";Connection Timeout=0;";
+            stringConexao = "Server=" + instancia?.Servidor + ";Database=PROJETO_BASE;User=" + (instancia?.Usuario) + ";Password=" + instancia?.Senha + ";Connection Timeout=0;TrustServerCertificate=True;";
 
             return stringConexao;
         }

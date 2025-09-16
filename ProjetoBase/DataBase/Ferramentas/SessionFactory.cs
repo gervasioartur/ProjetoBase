@@ -130,16 +130,16 @@ namespace ProjetoBase.DataBase
                                          {
                                              cfg.SetProperty("command_timeout", "300");
 
-                                             new SchemaUpdate(cfg).Execute(true, false);
+                                             new SchemaUpdate(cfg).Execute(true, true);
                                              cfg.DataBaseIntegration(prop => { prop.BatchSize = 20; prop.Driver<SqlClientDriver>(); });
-
-                                             //cfg.SetInterceptor(new SqlStatementInterceptor());  
+                                             cfg.SetInterceptor(new SqlStatementInterceptor());  
                                          }
                                          )
-
                                          .BuildConfiguration();
 
                 nhCfgCache.SaveConfigurationToFile(nhConfigurationCache);
+                // Atualiza o banco
+                MigrationRunner.ApplyMigrations(ConfigManager.getConnectionString());
             }
             else
             {

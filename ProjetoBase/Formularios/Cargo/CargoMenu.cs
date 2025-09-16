@@ -135,6 +135,9 @@ namespace ProjetoBase.Formularios
             }
         }
 
-      
+        private void BarraLateralBotoes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

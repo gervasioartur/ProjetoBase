@@ -1,6 +1,8 @@
-﻿namespace ProjetoBase.Formularios
+﻿using ProjetoBase.CustomControls;
+
+namespace ProjetoBase.Formularios
 {
-    partial class CargoCadastro
+    partial class CargoCadastro: FormCC
     {
         /// <summary>
         /// Required designer variable.

@@ -60,7 +60,7 @@ namespace ProjetoBase.Formularios
             this.dgv_cargo.Obrigatorio = false;
             this.dgv_cargo.RowHeadersVisible = false;
             this.dgv_cargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_cargo.Size = new System.Drawing.Size(1814, 1018);
+            this.dgv_cargo.Size = new System.Drawing.Size(1354, 857);
             this.dgv_cargo.SomenteLeitura = false;
             this.dgv_cargo.TabIndex = 4;
             this.dgv_cargo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pessoa_CellContentClick);
@@ -96,8 +96,9 @@ namespace ProjetoBase.Formularios
             this.BarraLateralBotoes.Dock = System.Windows.Forms.DockStyle.Left;
             this.BarraLateralBotoes.Location = new System.Drawing.Point(0, 24);
             this.BarraLateralBotoes.Name = "BarraLateralBotoes";
-            this.BarraLateralBotoes.Size = new System.Drawing.Size(90, 1018);
+            this.BarraLateralBotoes.Size = new System.Drawing.Size(90, 857);
             this.BarraLateralBotoes.TabIndex = 10;
+            this.BarraLateralBotoes.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraLateralBotoes_Paint);
             // 
             // btn_cadastrar
             // 
@@ -125,7 +126,7 @@ namespace ProjetoBase.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1042);
+            this.ClientSize = new System.Drawing.Size(1444, 881);
             this.Controls.Add(this.dgv_cargo);
             this.Controls.Add(this.BarraLateralBotoes);
             this.Location = new System.Drawing.Point(0, 0);

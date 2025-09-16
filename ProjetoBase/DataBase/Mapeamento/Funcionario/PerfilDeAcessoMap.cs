@@ -14,9 +14,8 @@ namespace ProjetoBase.DataBase.Mapeamento
         public PerfilDeAcessoMap()
         {            
             Id(x => x.Id).GeneratedBy.Identity();
-            Map(x => x.Nome);
+            Map(x => x.Nome).Unique();
             HasManyToMany(x => x.NivelDeAcesso).ParentKeyColumn("PERFIL_ACESSO_ID").ChildKeyColumn("NIVEL_ACESSO_ID").Table("NIVEIS_PERFIL_DE_ACESSO").Cascade.All();
-
             Table("PERFIL_DE_ACESSO");
         }
     }

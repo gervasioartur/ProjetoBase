@@ -22,9 +22,9 @@ namespace ProjetoBase.Formularios
     public partial class CargoCadastro : FormCC
     {
         Cargo cargo = null;
-        private readonly CargoService _cargoService;
+        private readonly CargoServico _cargoService;
 
-        public CargoCadastro(Cargo cargo, CargoService cargoService)
+        public CargoCadastro(Cargo cargo, CargoServico cargoService)
         {
             InitializeComponent();
             this.cargo = cargo;

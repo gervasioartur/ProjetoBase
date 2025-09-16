@@ -1,16 +1,25 @@
 ﻿using ProjetoBase.CustomControls;
+using ProjetoBase.CustomControls.Validacao;
 using ProjetoBase.DataBase;
-using System.Windows.Forms; 
+using ProjetoBase.Enumeradores;
+using ProjetoBase.Ferramentas;
+using ProjetoBase.Services;
+using ProjetoBase.Servicos;
 using System;
+using System.Windows.Forms;
 
 
 namespace ProjetoBase
 {
     public partial class Login : FormCC
     {
-        public Login()
+        private readonly AutenticacaoServico _autenticacaoServico;
+        public Login(AutenticacaoServico autenticacaoServico)
         {
             InitializeComponent();
+            //Servicos
+            _autenticacaoServico = autenticacaoServico;
+
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -37,9 +46,32 @@ namespace ProjetoBase
         private void btn_logar_Click(object sender, EventArgs e)
         {
             SessionFactory.UnflushedSession();
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+
+            if (string.IsNullOrEmpty(text_login.Texto))
+            {
+                mostrarMensagemResultadoSemFechar(EnumValidacaoTelaLogin.Login_Obrigatorio);
+                return;
+            }
+            if (string.IsNullOrEmpty(txt_senha.Texto))
+            {
+                mostrarMensagemResultadoSemFechar(EnumValidacaoTelaLogin.Senha_Obrigatorio);
+                return;
+            }
+
+            RetornoServico retornoService = this._autenticacaoServico.Login(text_login.Texto, txt_senha.Texto);
+
+            if (retornoService.ResultadoQuery == EnumResultadoQuery.SUCESSO)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                mostrarMensagemResultadoSemFechar(retornoService.ResultadoQuery, retornoService.Mensagem);
+            }
+
         }
+
 
     }
 }

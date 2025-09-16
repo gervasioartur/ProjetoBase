@@ -16,5 +16,6 @@ namespace ProjetoBase.DataBase.Ferramentas
         public static Repositorio<Usuario> Usuario = new Repositorio<Usuario>();
         public static Repositorio<Funcionario> Funcionario = new Repositorio<Funcionario>();
         public static Repositorio<NivelDeAcesso> NivelDeAcesso = new Repositorio<NivelDeAcesso>();
+        public static Repositorio<PerfilDeAcesso> PerfilDeAcesso = new Repositorio<PerfilDeAcesso>();
     }
 }

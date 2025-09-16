@@ -7,13 +7,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ProjetoBase.Services
 {
-    public class CargoService
+    public class CargoServico
     {
 
 
         private readonly CargoRepo _cargoRepo;
 
-        public CargoService(CargoRepo cargoRepo)
+        public CargoServico(CargoRepo cargoRepo)
         {
             _cargoRepo = cargoRepo;
         }

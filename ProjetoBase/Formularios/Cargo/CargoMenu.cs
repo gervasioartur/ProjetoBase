@@ -25,7 +25,7 @@ namespace ProjetoBase.Formularios
 {
     public partial class CargoMenu : MenuCC, InterfaceMenu
     {
-        private readonly CargoService _cargoService;
+        private readonly CargoServico _cargoService;
         public CargoMenu()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace ProjetoBase.Formularios
             //Repositorios
             CargoRepo cargoRepo = new CargoRepo();
             //Serviços
-            _cargoService = new CargoService(cargoRepo);
+            _cargoService = new CargoServico(cargoRepo);
         }
 
 

@@ -70,7 +70,6 @@ namespace ProjetoBase.CustomControls
         private void MenuCC_Load(object sender, EventArgs e)
         {
             configurarFormulario();  // Inicia as configurações de definição do formulario
-
         }
 
 

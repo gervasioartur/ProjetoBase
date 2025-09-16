@@ -1,7 +1,4 @@
-﻿using ProjetoBase.Formularios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 
 namespace ProjetoBase
@@ -16,7 +13,7 @@ namespace ProjetoBase
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new AppContext());
         }
     }
 }
